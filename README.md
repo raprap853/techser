@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -44,6 +44,7 @@ header {
     border: none;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .section {
@@ -143,7 +144,7 @@ input {
     <h3>Checkout</h3>
     <form onsubmit="submitOrder(event)">
         <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email (glee6937@gmail.com)" required>
+        <input type="email" placeholder="Email" required>
         <input type="text" placeholder="GCash Reference Number" required>
         <button class="btn">Submit Order</button>
     </form>
@@ -151,7 +152,7 @@ input {
 
 <div class="section">
     <h3>Contact</h3>
-    <p>Email: glee6937@gmail.com</p>
+    <p>Facebook: <a href="https://www.facebook.com/share/1CX8kZ4VGk/" target="_blank">https://www.facebook.com/share/1CX8kZ4VGk/</a></p>
 </div>
 
 </div>
@@ -175,7 +176,7 @@ input {
 let orders = [];
 
 function scrollToCheckout() {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    document.querySelector(".section form").scrollIntoView({ behavior: "smooth" });
 }
 
 function submitOrder(e) {
