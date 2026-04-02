@@ -1,96 +1,227 @@
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Office Store PH</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft Office Licensed Activated ₱199</title>
 
-    header {
-      background: #0078D4;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+}
 
-    .container {
-      padding: 20px;
-    }
+header {
+    background: #0078D7;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
 
-    .product {
-      background: white;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
+.hero {
+    text-align: center;
+    padding: 30px 15px;
+    background: white;
+}
 
-    button {
-      background: #0078D4;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+.hero img {
+    width: 120px;
+}
 
-    button:hover {
-      background: #005fa3;
-    }
+.price {
+    font-size: 30px;
+    color: green;
+    margin: 10px 0;
+}
 
-    footer {
-      text-align: center;
-      padding: 10px;
-      background: #222;
-      color: white;
-      margin-top: 20px;
+.btn {
+    background: #28a745;
+    color: white;
+    padding: 14px;
+    width: 100%;
+    max-width: 300px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.section {
+    margin: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.feature {
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+}
+
+.payment-box {
+    background: #e8f5e9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.admin {
+    display: none;
+}
+
+.admin table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin th, .admin td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .features {
+        grid-template-columns: 1fr;
     }
-  </style>
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Office Store PH</h1>
-  <p>Affordable Microsoft Office Licenses</p>
+    <h2>Microsoft Office Licensed Activated</h2>
 </header>
 
-<div class="container">
+<div id="store">
 
-  <div class="product">
-    <h2>Microsoft Office 2021</h2>
-    <p>One-time purchase for PC</p>
-    <h3>₱2,999</h3>
-    <button onclick="buy('Office 2021')">Buy Now</button>
-  </div>
+<div class="hero">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+    <h3>Get Microsoft Office Licensed Activated for ₱199</h3>
+    <div class="price">₱199</div>
+    <button class="btn" onclick="scrollToCheckout()">Buy Now</button>
+</div>
 
-  <div class="product">
-    <h2>Microsoft 365 Personal</h2>
-    <p>1-year subscription</p>
-    <h3>₱3,499</h3>
-    <button onclick="buy('Microsoft 365 Personal')">Buy Now</button>
-  </div>
+<div class="section">
+    <h3>Includes</h3>
+    <div class="features">
+        <div class="feature">Word</div>
+        <div class="feature">Excel</div>
+        <div class="feature">PowerPoint</div>
+        <div class="feature">Outlook</div>
+        <div class="feature">OneNote</div>
+        <div class="feature">Access</div>
+        <div class="feature">Publisher</div>
+    </div>
+</div>
 
-  <div class="product">
-    <h2>Microsoft 365 Family</h2>
-    <p>Up to 6 users</p>
-    <h3>₱4,999</h3>
-    <button onclick="buy('Microsoft 365 Family')">Buy Now</button>
-  </div>
+<div class="section">
+    <h3>Payment (GCash)</h3>
+    <div class="payment-box">
+        <p><strong>Send to:</strong> 09157406673</p>
+        <p><strong>Amount:</strong> ₱199</p>
+        <p>After payment, fill the form below.</p>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Checkout</h3>
+    <form onsubmit="submitOrder(event)">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email (glee6937@gmail.com)" required>
+        <input type="text" placeholder="GCash Reference Number" required>
+        <button class="btn">Submit Order</button>
+    </form>
+</div>
+
+<div class="section">
+    <h3>Contact</h3>
+    <p>Email: glee6937@gmail.com</p>
+</div>
 
 </div>
 
-<footer>
-  <p>Contact: your@email.com | GCash Available</p>
-</footer>
+<div id="admin" class="admin section">
+    <h3>Admin Dashboard</h3>
+    <button class="btn" onclick="showStore()">Back to Store</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Reference</th>
+            </tr>
+        </thead>
+        <tbody id="orders"></tbody>
+    </table>
+</div>
 
 <script>
-  function buy(product) {
-    alert("You selected: " + product + "\nMessage us to complete your order!");
-  }
+let orders = [];
+
+function scrollToCheckout() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+}
+
+function submitOrder(e) {
+    e.preventDefault();
+
+    let inputs = e.target.querySelectorAll("input");
+
+    let order = {
+        name: inputs[0].value,
+        email: inputs[1].value,
+        ref: inputs[2].value
+    };
+
+    orders.push(order);
+    renderOrders();
+
+    alert("Order submitted! Wait for confirmation via email.");
+
+    e.target.reset();
+}
+
+function renderOrders() {
+    let table = document.getElementById("orders");
+    table.innerHTML = "";
+
+    orders.forEach(o => {
+        table.innerHTML += `
+            <tr>
+                <td>${o.name}</td>
+                <td>${o.email}</td>
+                <td>${o.ref}</td>
+            </tr>
+        `;
+    });
+}
+
+if (window.location.hash === "#admin") {
+    document.getElementById("store").style.display = "none";
+    document.getElementById("admin").style.display = "block";
+}
+
+function showStore() {
+    document.getElementById("store").style.display = "block";
+    document.getElementById("admin").style.display = "none";
+}
 </script>
 
 </body>
